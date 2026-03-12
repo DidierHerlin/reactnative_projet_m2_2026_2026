@@ -5,7 +5,7 @@ Django settings for GestionMateril project.
 from pathlib import Path
 from datetime import timedelta
 import os
-
+import dj_database_url
 from decouple import config
 from dotenv import load_dotenv
 load_dotenv()
@@ -77,16 +77,18 @@ WSGI_APPLICATION = 'GestionMateril.wsgi.application'
 
 
 # ====================== BASE DE DONNÉES (PostgreSQL) ======================
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'applicationReactNative',
-        'USER': 'postgres',
-        'PASSWORD': 'herlin',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'applicationReactNative',
+#         'USER': 'postgres',
+#         'PASSWORD': 'herlin',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+DATABASES['default'] = dj_database_url.config(default=config("postgresql://reactnativeapp_user:RxJpGqYmGeC5rxOyzXEtyBrjDsx1qyHj@dpg-d6pbva7kijhs73fmtr00-a.oregon-postgres.render.com/reactnativeapp"))   
 
 
 # ====================== MODÈLE UTILISATEUR PERSONNALISÉ ======================

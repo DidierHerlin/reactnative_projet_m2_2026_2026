@@ -1,0 +1,40 @@
+# ====================== ENVIRONNEMENT ======================
+.env
+.env.local
+.env.production
+.venv/
+venv/
+env/
+
+# ====================== PYTHON ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ====================== DJANGO ======================
+*.log
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# ====================== BASE DE DONNÉES ======================
+*.sql
+*.dump
+
+# ====================== EDITEURS ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ====================== NODE (si frontend) ======================
+node_modules/
+npm-debug.log
